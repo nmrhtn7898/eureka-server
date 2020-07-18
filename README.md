@@ -1,2 +1,3 @@
-# eureka-server
-spring cloud eureka server example
+# Spring Cloud Eureka Server
+
+1\.
