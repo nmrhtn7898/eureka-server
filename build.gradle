@@ -2,6 +2,7 @@ plugins {
     id 'org.springframework.boot' version '2.3.1.RELEASE'
     id 'io.spring.dependency-management' version '1.0.9.RELEASE'
     id 'java'
+    id 'com.bmuschko.docker-spring-boot-application' version '6.6.0'
 }
 
 group = 'com.example'
@@ -32,3 +33,12 @@ dependencyManagement {
 test {
     useJUnitPlatform()
 }
+
+task copyDocker {
+    copy {
+        from 'src/main/docker'
+        into 'build/libs/'
+    }
+}
+
+tasks.build.finalizedBy(copyDocker)
