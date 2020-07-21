@@ -2,7 +2,7 @@ version: '3'
 services:
   eurekaserver:
     container_name: "eurekaserver"
-    image: spring-cloud-eureka-server:1.0
+    image: eureka-server:1.0
     ports:
       - "8761:8761"
     environment:
