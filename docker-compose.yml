@@ -1,9 +1,13 @@
 version: '3'
+networks:
+  myweb:
 services:
   eurekaserver:
     container_name: "eurekaserver"
     image: eureka-server:1.0
     ports:
       - "8761:8761"
+    networks:
+      - myweb
     environment:
       RUN_MESSAGE: "HELLO !!"
